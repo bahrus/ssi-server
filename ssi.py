@@ -28,7 +28,7 @@ def InlineIncludes(path, web_path):
       warnings.warn(error)
       return error_tmpl % error
 
-  content = open(path).read()
+  content = open(path, "r", -1, "utf-8").read()
   content = re.sub(r'<!-- *#include *(virtual|file)=[\'"]([^\'"]+)[\'"] *-->',
       get_include_file_content,
       content)
