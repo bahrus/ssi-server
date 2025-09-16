@@ -20,7 +20,7 @@ def InlineIncludes(path, web_path):
     if  len(os.path.dirname(web_path)) >2:
        file_to_read = os.path.join(os.path.dirname(web_path),file_to_read)[1:]
        recursive_web_path = "/%s/" % os.path.dirname(file_to_read)
-    if os.path.exists(file_to_read):
+    if os.path.exists(path):
       # Recursively process ssi calls in the included file
       return InlineIncludes(file_to_read, recursive_web_path)
     else:
