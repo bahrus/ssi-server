@@ -1,6 +1,6 @@
 {
   "name": "ssi-server",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "ssi-server\r ==========",
   "main": "index.js",
   "scripts": {
