@@ -49,7 +49,8 @@ class SSIRequestHandler(SimpleHTTPRequestHandler):
         if os.path.exists(index):
           fs_path = index
           break
-
+    if not os.path.exists(fs_path):
+       fs_path = 'index.html'
     if (fs_path.endswith('.html') or fs_path.endswith(".shtml")) and os.path.exists(fs_path):
       content = ssi.InlineIncludes(fs_path, path)
       fs_path = self.create_temp_file(fs_path, content)
