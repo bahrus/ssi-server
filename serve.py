@@ -10,6 +10,11 @@ class SPAHTTPRequestHandler(SimpleHTTPRequestHandler):
     - Provides SPA fallback: serves index.html if a requested .html file is not found.
     """
 
+    def log_message(self, format, *args):
+        """Suppress logging output."""
+        return
+
+
     def send_head(self):
         """Override to add SPA fallback logic for missing .html files."""
         path = self.translate_path(self.path)
